@@ -1,22 +1,35 @@
+import React from 'react';
+
 export default function AboutInfoOne() {
   return (
     <section className="w-full py-24 bg-white">
-      <div className="max-w-[939px] mx-auto px-8 text-center flex flex-col gap-6">
+      {/* Perubahan Kunci: 'items-center'
+        Ini membuat Teks (kiri) berada di tengah-tengah vertikal (center) 
+        relatif terhadap Gambar (kanan). Jadi ada sisa ruang di atas dan bawah teks.
+      */}
+      <div className="max-w-[1200px] mx-auto px-6 flex flex-row items-center justify-center gap-16">
+        
+        {/* === BAGIAN KIRI: TEKS === */}
+        <div className="w-[527px] flex flex-col gap-6 shrink-0">
+          <h2 className="text-[32px] font-bold text-[#012C61] leading-tight">
+            Who We Are
+          </h2>
+          
+          <p className="text-lg text-black leading-relaxed">
+            We are a logistics company focused on delivering end-to-end supply chain solutions. 
+            Our expertise spans transportation, warehousing, and distribution, enabling businesses 
+            to operate efficiently across local and global markets.
+          </p>
+        </div>
 
-        <h2 className="text-2xl font-bold text-[#012C61]">
-          Be ready for anything to go all the way
-        </h2>
-
-        <div className="w-52 h-1.5 bg-[#DF1026] rounded-xl mx-auto" />
-
-        <p className="text-xl text-[#012C61] leading-relaxed">
-          Logistics can get messy fast. And just when you think you’re done,
-          another challenge appears. With NOLTA as your partner, you don’t have
-          to face challenges alone.
-          <span className="underline ml-1">
-            Stay ready for what comes next
-          </span>.
-        </p>
+        {/* === BAGIAN KANAN: GAMBAR === */}
+        <div className="w-[559px] h-[330px] shrink-0">
+          <img 
+            src="/images/about/whoweare.png" 
+            alt="Logistics container and crane"
+            className="w-full h-full object-cover rounded-md"
+          />
+        </div>
 
       </div>
     </section>
