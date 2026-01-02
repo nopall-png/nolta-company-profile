@@ -17,64 +17,37 @@ export default function Navbar() {
 
   return (
     <nav className="absolute top-0 left-0 w-full z-50">
-      <div className="max-w-[1308px] mx-auto px-8">
-        <div className="flex items-center justify-between h-20">
+      <div className="max-w-[1300px] mx-auto px-8">
+        <div className="flex items-center justify-between h-16">
 
-          {/* LOGO */}
-          <div className="flex items-center pl-[61px] mr-auto">
+          {/* LOGO — MORE LEFT */}
+          <Link
+            href="/"
+            className="flex items-center gap-4 -ml-6" // 🔥 geser ke kiri
+          >
             <Image
               src="/images/navbar/logo.png"
               alt="Nolta Logo"
-              width={200}
-              height={200}
+              width={180}
+              height={80}
               priority
-              className="object-contain"
             />
-
-            <span className="ml-[14px] text-white text-4xl font-bold tracking-wide">
+            <span className="text-white text-3xl font-bold tracking-wide">
               NOLTA
             </span>
-          </div>
+          </Link>
 
           {/* DESKTOP MENU */}
-          <div className="hidden md:flex items-center gap-10 text-white text-[28px] font-regular">
-
-            {/* HOME */}
-            <div className="relative flex flex-col items-center">
-              <Link href="/" className="pb-3">
-                Home
-              </Link>
-              <span
-                className={`absolute bottom-0 h-[5px] bg-red-600 rounded-xl transition-all duration-300
-                  ${isActive("/") ? "w-16 opacity-100" : "w-0 opacity-0"}
-                `}
-              />
-            </div>
-
-            {/* CONTACT */}
-            <div className="relative flex flex-col items-center">
-              <Link href="/contact" className="pb-3">
-                Contact Us
-              </Link>
-              <span
-                className={`absolute bottom-0 h-[5px] bg-red-600 rounded-xl transition-all duration-300
-                  ${isActive("/contact") ? "w-20 opacity-100" : "w-0 opacity-0"}
-                `}
-              />
-            </div>
-
-            {/* ABOUT */}
-            <div className="relative flex flex-col items-center">
-              <Link href="/about" className="pb-3">
-                About Us
-              </Link>
-              <span
-                className={`absolute bottom-0 h-[5px] bg-red-600 rounded-xl transition-all duration-300
-                  ${isActive("/about") ? "w-16 opacity-100" : "w-0 opacity-0"}
-                `}
-              />
-            </div>
-
+          <div className="hidden md:flex items-center gap-12 text-white text-lg font-semibold">
+            <NavItem href="/" active={isActive("/")}>
+              Home
+            </NavItem>
+            <NavItem href="/contact" active={isActive("/contact")}>
+              Contact Us
+            </NavItem>
+            <NavItem href="/about" active={isActive("/about")}>
+              About Us
+            </NavItem>
           </div>
 
           {/* MOBILE BUTTON */}
@@ -87,11 +60,36 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* MOBILE MENU */}
       <MobileMenu
         isOpen={menuOpen}
         onClose={() => setMenuOpen(false)}
       />
     </nav>
+  )
+}
+
+/* ===============================
+   NAV ITEM
+================================ */
+function NavItem({
+  href,
+  active,
+  children,
+}: {
+  href: string
+  active: boolean
+  children: React.ReactNode
+}) {
+  return (
+    <div className="relative">
+      <Link href={href} className="pb-1 block">
+        {children}
+      </Link>
+      <span
+        className={`absolute left-0 -bottom-2 h-[3px] bg-red-600 rounded-full transition-all duration-300
+          ${active ? "w-full opacity-100" : "w-0 opacity-0"}
+        `}
+      />
+    </div>
   )
 }

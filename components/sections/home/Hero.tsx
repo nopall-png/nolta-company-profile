@@ -15,6 +15,6 @@ export default function Hero() {
 
       {/* OPTIONAL OVERLAY */}
       <div className="absolute inset-0 bg-black/10" />
-    </section>
+    </section> 
   )
 }

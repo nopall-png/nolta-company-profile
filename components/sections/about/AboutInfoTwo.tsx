@@ -1,8 +1,6 @@
-import React from 'react';
-
 export default function AboutInfoTwo() {
   return (
-    <section className="w-full py-24 bg-[#F8FAFC]">
+    <section className="w-full py-24 bg-[#ffffff]">
       {/* Container Utama */}
       <div className="max-w-[1000px] mx-auto px-6 flex flex-col items-center gap-12">
 

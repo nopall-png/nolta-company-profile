@@ -1,6 +1,6 @@
 export default function GetInTouch() {
   return (
-    <section className="w-full bg-gray-50 py-24">
+    <section className="w-full bg-whitepy-24">
       <div className="max-w-[896px] mx-auto px-6 flex flex-col gap-12">
 
         {/* TITLE */}

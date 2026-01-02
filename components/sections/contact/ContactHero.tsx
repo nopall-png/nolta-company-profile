@@ -2,24 +2,26 @@ import Image from "next/image"
 
 export default function ContactHero() {
   return (
-    <section className="w-full h-[420px] relative flex items-center justify-center">
+    <section className="relative w-full h-[90vh] min-h-[500px] overflow-hidden">
 
-      {/* BACKGROUND IMAGE */}
+      {/* HERO IMAGE */}
       <Image
         src="/images/contact/hero.png"
         alt="Contact Us Hero"
         fill
         priority
-        className="object-cover"
+        className="object-cover object-center"
       />
 
-      {/* OVERLAY (optional biar text kebaca) */}
+      {/* OPTIONAL OVERLAY */}
       <div className="absolute inset-0 bg-black/40" />
 
-      {/* CENTER TEXT */}
-      <h1 className="relative z-10 text-white text-4xl md:text-5xl font-bold">
-        Contact Us
-      </h1>
+      {/* CONTENT */}
+      <div className="relative z-10 h-full flex items-center justify-center">
+        <h1 className="text-white text-5xl md:text-6xl font-bold">
+          Contact Us
+        </h1>
+      </div>
 
     </section>
   )
