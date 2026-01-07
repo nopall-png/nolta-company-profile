@@ -1,14 +1,50 @@
+"use client"
+
 import Image from "next/image"
+import { motion, Variants } from "framer-motion"
+
+// Konfigurasi animasi masuk (Staggered Fade Up)
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2 // Jeda antar kartu
+    }
+  }
+}
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 30 }, // Muncul dari sedikit di bawah
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" as const }
+  }
+}
 
 export default function ServicesSection() {
   return (
     <section className="w-full py-24 bg-white">
       <div className="max-w-[1200px] mx-auto px-6">
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Menggunakan motion.div sebagai container untuk mengatur urutan animasi */}
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }} // Animasi berjalan saat elemen masuk layar
+        >
 
           {/* CARD 1 */}
-          <div className="px-8 pt-8 pb-10 bg-white rounded-[10px] shadow-sm border border-gray-200 flex flex-col items-start gap-5">
+          <motion.div 
+            variants={cardVariants}
+            // Efek Hover Halus: Naik 4px, shadow menebal, border menggelap
+            whileHover={{ y: -4, borderColor: "#9ca3af", boxShadow: "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)" }}
+            transition={{ duration: 0.3 }}
+            className="px-8 pt-8 pb-10 bg-white rounded-[10px] shadow-sm border border-gray-200 flex flex-col items-start gap-5 transition-all cursor-default"
+          >
             <Image
               src="/icons/home/services/start.svg"
               alt="How to get started"
@@ -24,10 +60,15 @@ export default function ServicesSection() {
               Create an account to book shipments, manage logistics operations,
               and make payments online.
             </p>
-          </div>
+          </motion.div>
 
           {/* CARD 2 */}
-          <div className="px-8 pt-8 pb-10 bg-white rounded-[10px] shadow-sm border border-gray-200 flex flex-col items-start gap-5">
+          <motion.div 
+            variants={cardVariants}
+            whileHover={{ y: -4, borderColor: "#9ca3af", boxShadow: "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)" }}
+            transition={{ duration: 0.3 }}
+            className="px-8 pt-8 pb-10 bg-white rounded-[10px] shadow-sm border border-gray-200 flex flex-col items-start gap-5 transition-all cursor-default"
+          >
             <Image
               src="/icons/home/services/booking.svg"
               alt="Ready to book"
@@ -43,10 +84,15 @@ export default function ServicesSection() {
               Gain access to reliable logistics services, practical insights,
               and professional support to help your business.
             </p>
-          </div>
+          </motion.div>
 
           {/* CARD 3 */}
-          <div className="px-8 pt-8 pb-10 bg-white rounded-[10px] shadow-sm border border-gray-200 flex flex-col items-start gap-5">
+          <motion.div 
+            variants={cardVariants}
+            whileHover={{ y: -4, borderColor: "#9ca3af", boxShadow: "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)" }}
+            transition={{ duration: 0.3 }}
+            className="px-8 pt-8 pb-10 bg-white rounded-[10px] shadow-sm border border-gray-200 flex flex-col items-start gap-5 transition-all cursor-default"
+          >
             <Image
               src="/icons/home/services/expert.svg"
               alt="Become a logistics expert"
@@ -62,9 +108,9 @@ export default function ServicesSection() {
               Whether you need to request shipping rates, place a booking,
               prepare documents, or track your cargo.
             </p>
-          </div>
+          </motion.div>
 
-        </div>
+        </motion.div>
       </div>
     </section>
   )

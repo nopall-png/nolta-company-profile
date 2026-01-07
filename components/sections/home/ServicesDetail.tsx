@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
+import { motion, AnimatePresence } from "framer-motion"
 
 type CategoryKey =
   | "port"
@@ -78,7 +79,12 @@ export default function ServiceDetailSection() {
       <div className="max-w-[1200px] mx-auto px-6">
 
         {/* ================= TABS ================= */}
-        <div className="flex flex-wrap items-center gap-12 mb-16">
+        {/* PERBAIKAN DI SINI:
+            1. justify-start: Di HP rata kiri (seperti yang lama).
+            2. md:justify-center: Di Desktop rata tengah (yang baru).
+            3. gap-6 md:gap-12: Jarak di HP lebih rapat agar muat, di Desktop renggang.
+        */}
+        <div className="flex flex-wrap items-center justify-start md:justify-center gap-6 md:gap-12 mb-16">
           {categories.map((cat) => {
             const isActive = activeTab === cat.key
 
@@ -86,18 +92,23 @@ export default function ServiceDetailSection() {
               <button
                 key={cat.key}
                 onClick={() => setActiveTab(cat.key as CategoryKey)}
-                className="relative flex items-center gap-3 pb-2 group"
+                className="relative flex items-center gap-3 pb-2 group outline-none"
               >
-                <Image
-                  src={cat.icon}
-                  alt={cat.label}
-                  width={32}
-                  height={32}
-                />
+                {/* Icon dengan efek sedikit goyang saat hover */}
+                <motion.div 
+                  whileHover={{ rotate: [0, -10, 10, 0], transition: { duration: 0.5 } }}
+                >
+                  <Image
+                    src={cat.icon}
+                    alt={cat.label}
+                    width={32}
+                    height={32}
+                  />
+                </motion.div>
 
                 <span
                   className={`text-base font-medium transition-colors duration-300
-                    ${isActive ? "text-black" : "text-gray-500"}
+                    ${isActive ? "text-black" : "text-gray-500 group-hover:text-black"}
                   `}
                 >
                   {cat.label}
@@ -110,7 +121,7 @@ export default function ServiceDetailSection() {
                     bg-[var(--color-secondary)] rounded-full
                     origin-left
                     transition-all duration-300 ease-out
-                    ${isActive ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0"}
+                    ${isActive ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0 group-hover:scale-x-50 group-hover:opacity-50"}
                   `}
                 />
               </button>
@@ -118,41 +129,63 @@ export default function ServiceDetailSection() {
           })}
         </div>
 
-        {/* ================= CARDS ================= */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {cardsByCategory[activeTab].map((card, i) => (
-            <div key={i} className="flex flex-col gap-4">
-
-              {card.img ? (
-                <div className="w-full h-[220px] relative rounded-2xl overflow-hidden">
-                  <Image
-                    src={card.img}
-                    alt={card.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              ) : (
-                <div className="w-full h-[220px] rounded-2xl bg-gray-200" />
-              )}
-
-              <h3 className="text-lg font-semibold text-[var(--color-secondary)]">
-                {card.title}
-              </h3>
-
-              <p
-                className={`text-base leading-6
-                  ${card.img
-                    ? "text-[var(--color-black)]"
-                    : "text-[var(--color-black)]"}
-                `}
+        {/* ================= CARDS CONTAINER ================= */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeTab} 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5, ease: "easeOut" as const }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-12"
+          >
+            {cardsByCategory[activeTab].map((card, i) => (
+              <motion.div 
+                key={i} 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="flex flex-col gap-4 group cursor-pointer"
               >
-                {card.desc}
-              </p>
 
-            </div>
-          ))}
-        </div>
+                {/* IMAGE CONTAINER */}
+                {card.img ? (
+                  <div className="w-full h-[220px] relative rounded-2xl overflow-hidden shadow-sm group-hover:shadow-md transition-shadow duration-300">
+                    <Image
+                      src={card.img}
+                      alt={card.title}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300" />
+                  </div>
+                ) : (
+                  <div className="w-full h-[220px] rounded-2xl bg-gray-100 relative overflow-hidden group-hover:bg-gray-200 transition-colors duration-300">
+                     <div className="absolute inset-0 flex items-center justify-center text-gray-400">
+                        <span className="text-4xl opacity-20">NOLTA</span>
+                     </div>
+                  </div>
+                )}
+
+                {/* TEXT CONTENT */}
+                <div>
+                  <h3 className="text-lg font-semibold text-[var(--color-secondary)] group-hover:text-red-600 transition-colors duration-300">
+                    {card.title}
+                  </h3>
+
+                  <p
+                    className={`text-base leading-6 mt-2
+                      ${card.img ? "text-[var(--color-black)]" : "text-[var(--color-black)]"}
+                    `}
+                  >
+                    {card.desc}
+                  </p>
+                </div>
+
+              </motion.div>
+            ))}
+          </motion.div>
+        </AnimatePresence>
 
       </div>
     </section>
