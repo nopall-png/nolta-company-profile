@@ -13,6 +13,7 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://nolta-logistics.com'),
   title: {
     default: "NOLTA Logistics",
     template: "%s | NOLTA Logistics",

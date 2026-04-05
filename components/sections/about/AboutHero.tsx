@@ -15,7 +15,7 @@ export default function AboutHero() {
         className="absolute inset-0"
       >
         <Image
-          src="/images/about/heroo.jpg"
+          src="/images/about/hero2.jpg"
           alt="About NOLTA"
           fill
           priority
