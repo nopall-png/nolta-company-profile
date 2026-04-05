@@ -9,13 +9,13 @@ export default function AboutHero() {
 
       {/* === HERO IMAGE (SLOW ZOOM) === */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.5, ease: "easeOut" }}
+        initial={{ scale: 1.1, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 2.2, ease: "easeOut" }}
         className="absolute inset-0"
       >
         <Image
-          src="/images/about/hero2.jpg"
+          src="/images/about/hero4.jpg"
           alt="About NOLTA"
           fill
           priority
