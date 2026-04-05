@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { motion, type Variants } from "framer-motion"
 
 const cardVariant: Variants = {
@@ -31,30 +32,39 @@ export default function AboutServices() {
           What We Do
         </motion.h2>
 
-        {/* === CARDS === */}
-        <div className="flex flex-col lg:flex-row justify-center items-center gap-8">
+        {/* === GRID === */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
           {[
             {
               icon: "/icons/about/transport.svg",
               title: "Freight & Transportation",
               desc: "Efficient land, sea, and air freight solutions optimized for reliability and cost efficiency.",
-              wTitle: "w-[187px]",
-              wDesc: "w-[294px]",
             },
             {
               icon: "/icons/about/warehouse.svg",
               title: "Warehousing & Distribution",
               desc: "Secure storage, inventory management, and streamlined distribution operations.",
-              wTitle: "w-[192px]",
-              wDesc: "w-[252px]",
             },
             {
               icon: "/icons/about/supply.svg",
               title: "Supply Chain Optimization",
               desc: "Strategic planning and tracking to improve visibility, reduce delays, and increase performance.",
-              wTitle: "w-[165px]",
-              wDesc: "w-[294px]",
+            },
+            {
+              icon: "/icons/about/distribution.svg",
+              title: "Distribution",
+              desc: "End-to-end distribution services ensuring fast and efficient product flow through last-mile delivery.",
+            },
+            {
+              icon: "/icons/about/freight.svg",
+              title: "Freight Forwarding & Customs",
+              desc: "Expert freight forwarding and customs services to simplify global trade, including customs clearance and import–export documentation.",
+            },
+            {
+              icon: "/icons/about/packaging.svg",
+              title: "Packaging & Handling",
+              desc: "Professional packaging and handling services for standard, fragile, hazardous, and oversized goods.",
             },
           ].map((item, i) => (
             <motion.div
@@ -65,27 +75,21 @@ export default function AboutServices() {
               whileInView="visible"
               viewport={{ once: true }}
               whileHover={{ y: -6 }}
-              className="w-[367px] h-[288px] bg-white border border-gray-200 rounded-xl p-8 flex flex-col items-start shadow-sm hover:shadow-md transition-all"
+              className="bg-white border border-gray-200 rounded-xl p-8 flex flex-col items-start gap-4 shadow-sm hover:shadow-md transition-all"
             >
-              <div className="mb-6">
-                <img
-                  src={item.icon}
-                  alt={item.title}
-                  width={48}
-                  height={48}
-                  className="w-12 h-12"
-                />
-              </div>
+              <Image
+                src={item.icon}
+                alt={item.title}
+                width={48}
+                height={48}
+                className="w-12 h-12 object-contain"
+              />
 
-              <h3
-                className={`text-2xl font-bold text-[#012C61] ${item.wTitle} mb-4 leading-tight`}
-              >
+              <h3 className="text-2xl font-bold text-[#012C61] leading-tight">
                 {item.title}
               </h3>
 
-              <p
-                className={`text-base text-gray-600 ${item.wDesc} leading-relaxed`}
-              >
+              <p className="text-base text-gray-600 leading-relaxed">
                 {item.desc}
               </p>
             </motion.div>
@@ -93,8 +97,6 @@ export default function AboutServices() {
 
         </div>
 
-        {/* === SPACER === */}
-        <div className="w-full h-16" />
       </div>
     </section>
   )

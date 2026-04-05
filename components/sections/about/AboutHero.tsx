@@ -9,16 +9,18 @@ export default function AboutHero() {
 
       {/* === HERO IMAGE (SLOW ZOOM) === */}
       <motion.div
-        initial={{ scale: 1.1 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 2.2, ease: "easeOut" }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
         className="absolute inset-0"
       >
         <Image
-          src="/images/about/hero.png"
+          src="/images/about/heroo.jpg"
           alt="About NOLTA"
           fill
           priority
+          sizes="100vw"
+          quality={100}
           className="object-cover object-center"
         />
       </motion.div>

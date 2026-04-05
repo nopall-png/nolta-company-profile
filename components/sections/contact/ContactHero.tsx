@@ -32,7 +32,7 @@ export default function ContactHero() {
       />
 
       {/* === CONTENT === */}
-      <div className="relative z-10 h-full flex items-center justify-center">
+      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center gap-6 px-6">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -41,8 +41,17 @@ export default function ContactHero() {
         >
           Contact Us
         </motion.h1>
-      </div>
 
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.65 }}
+          className="text-white text-lg md:text-xl leading-relaxed max-w-[967px]"
+        >
+          Have questions or need logistics support? Our team is ready to assist you
+          with reliable, efficient, and tailored supply chain solutions.
+        </motion.p>
+      </div>
     </section>
   )
 }

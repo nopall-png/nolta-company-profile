@@ -72,7 +72,7 @@ export default function Footer() {
               <h3 className="text-xl font-semibold text-white tracking-wide">Resources</h3>
             </div>
             <ul className="flex flex-col gap-3 text-base font-light text-gray-300 text-left lg:text-right">
-              {['Track Shipment', 'Get Quote', 'Documentation', 'Support Center', 'Terms of Service'].map((item, idx) => (
+              {[ 'Get Quote', 'Documentation', 'Support Center'].map((item, idx) => (
                 <li key={idx} className="hover:text-cyan-400 transition-colors cursor-pointer">{item}</li>
               ))}
             </ul>
