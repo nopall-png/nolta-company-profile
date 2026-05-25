@@ -105,7 +105,7 @@ export default function Footer() {
               </p>
               <p className="flex items-start gap-2">
                 <span className="text-cyan-400 mt-0.5">📍</span>
-                <span>Jakarta, Indonesia</span>
+                <span>JL. JEND GATOT SUBROTO KAV 32-34, JAKARTA</span>
               </p>
             </div>
           </div>

@@ -89,8 +89,7 @@ export default function ContactInfo() {
           >
             <Image src="/icons/contact/phone.svg" alt="Phone" width={48} height={48} />
             <h3 className="text-[var(--color-primary)] text-2xl font-bold">Phone</h3>
-            <p>+1 (555) 019-4827</p>
-            <p>+44 20 7946 0958</p>
+            <p>0813-1775-0057</p>
           </motion.div>
 
           {/* CARD 2 */}
@@ -108,8 +107,8 @@ export default function ContactInfo() {
           >
             <Image src="/icons/contact/email.svg" alt="Email" width={48} height={48} />
             <h3 className="text-[var(--color-primary)] text-2xl font-bold">Email</h3>
-            <p>contact@yourcompany.com</p>
-            <p>support@yourcompany.com</p>
+            <p> noltalog001@noltalogistic.com</p>
+            <p> noltalog002@noltalogistic.com</p>
           </motion.div>
 
           {/* CARD 3 */}
@@ -127,9 +126,9 @@ export default function ContactInfo() {
           >
             <Image src="/icons/contact/location.svg" alt="Location" width={48} height={48} />
             <h3 className="text-[var(--color-primary)] text-2xl font-bold">Head Office</h3>
-            <p>742 Evergreen Business Park</p>
-            <p>San Francisco, CA 94107</p>
-            <p>United States</p>
+            <p>GEDUNG PATRA JASA OFFICE</p>
+            <p>LANTAI 17</p>
+            <p>JL. JEND GATOT SUBROTO KAV 32-34, JAKARTA</p>
           </motion.div>
 
         </motion.div>
