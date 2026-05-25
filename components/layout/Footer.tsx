@@ -97,11 +97,11 @@ export default function Footer() {
             <div className="space-y-2">
               <p className="flex items-start gap-2">
                 <span className="text-cyan-400 mt-0.5">✉</span>
-                <span>info@nolta-logistics.com</span>
+                <span>noltalog001@noltalogistic.com</span>
               </p>
               <p className="flex items-start gap-2">
                 <span className="text-cyan-400 mt-0.5">☎</span>
-                <span>+62 xxx xxxx xxxx</span>
+                <span>+62 813 1775 0057</span>
               </p>
               <p className="flex items-start gap-2">
                 <span className="text-cyan-400 mt-0.5">📍</span>
