@@ -6,6 +6,19 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import MobileMenu from "./MobileMenu"
 
+const NavLink = ({ href, label, active }: { href: string; label: string; active: boolean }) => (
+  <div className="relative flex flex-col items-center group">
+    <Link href={href} className="pb-2 hover:text-gray-300 transition-colors duration-300">
+      {label}
+    </Link>
+    <span
+      className={`absolute bottom-0 h-[3px] bg-red-600 rounded-full transition-all duration-500 ease-out
+        ${active ? "w-full opacity-100" : "w-0 opacity-0 group-hover:w-full group-hover:opacity-100"}
+      `}
+    />
+  </div>
+)
+
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -28,19 +41,6 @@ export default function Navbar() {
     if (path === "/") return pathname === "/"
     return pathname.startsWith(path)
   }
-
-  const NavLink = ({ href, label }: { href: string; label: string }) => (
-    <div className="relative flex flex-col items-center group">
-      <Link href={href} className="pb-2 hover:text-gray-300 transition-colors duration-300">
-        {label}
-      </Link>
-      <span
-        className={`absolute bottom-0 h-[3px] bg-red-600 rounded-full transition-all duration-500 ease-out
-          ${isActive(href) ? "w-full opacity-100" : "w-0 opacity-0 group-hover:w-full group-hover:opacity-100"}
-        `}
-      />
-    </div>
-  )
 
   return (
     <>
@@ -86,9 +86,9 @@ export default function Navbar() {
 
             {/* --- DESKTOP MENU --- */}
             <div className="hidden md:flex items-center gap-8 lg:gap-12 text-white text-[17px] font-medium tracking-wide">
-              <NavLink href="/" label="Home" />
-              <NavLink href="/contact" label="Contact Us" />
-              <NavLink href="/about" label="About Us" />
+              <NavLink href="/" label="Home" active={isActive("/")} />
+              <NavLink href="/contact" label="Contact Us" active={isActive("/contact")} />
+              <NavLink href="/about" label="About Us" active={isActive("/about")} />
             </div>
 
             {/* --- MOBILE HAMBURGER BUTTON --- */}

@@ -45,8 +45,11 @@ export default function AboutVisionMission() {
             </div>
 
             <p className="text-lg text-gray-700 leading-relaxed">
-              To provide dependable logistics solutions that support business growth
-              and operational excellence.
+              Deliver reliable, timely, and cost-effective logistics services
+              Provide excellent customer service with professional handling
+              Ensure safety, accuracy, and efficiency in every shipment
+              Build long-term partnerships based on trust and performance
+              Continuously improve through innovation and technology
             </p>
           </div>
         </motion.div>
@@ -76,8 +79,9 @@ export default function AboutVisionMission() {
             </div>
 
             <p className="text-lg text-gray-700 leading-relaxed">
-              To become a trusted logistics partner recognized for reliability,
-              efficiency, and innovation.
+              To become a leading and trusted logistics partner, providing integrated
+              and innovative transportation solutions that support business growth
+              and global trade.
             </p>
           </div>
         </motion.div>

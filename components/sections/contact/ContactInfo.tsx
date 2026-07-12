@@ -81,17 +81,17 @@ export default function ContactInfo() {
             className="
               min-w-full snap-start
               md:min-w-0
-              h-64 px-8 pt-8
+              min-h-[16rem] px-6 py-8
               bg-white rounded-[10px]
               shadow-sm border border-gray-200
-              flex flex-col items-center gap-4
+              flex flex-col items-center justify-center gap-4
             "
           >
             <Image src="/icons/contact/phone.svg" alt="Phone" width={48} height={48} />
             <h3 className="text-[var(--color-primary)] text-2xl font-bold">Phone</h3>
-            <p>0813-1775-0057</p>
+            <p className="text-black font-medium">0813-1775-0057</p>
           </motion.div>
-
+ 
           {/* CARD 2 */}
           <motion.div
             variants={cardVariants}
@@ -99,18 +99,20 @@ export default function ContactInfo() {
             className="
               min-w-full snap-start
               md:min-w-0
-              h-64 px-8 pt-8
+              min-h-[16rem] px-6 py-8
               bg-white rounded-[10px]
               shadow-sm border border-gray-200
-              flex flex-col items-center gap-4
+              flex flex-col items-center justify-center gap-4
             "
           >
             <Image src="/icons/contact/email.svg" alt="Email" width={48} height={48} />
             <h3 className="text-[var(--color-primary)] text-2xl font-bold">Email</h3>
-            <p> noltalog001@noltalogistic.com</p>
-            <p> noltalog002@noltalogistic.com</p>
+            <div className="flex flex-col items-center text-black font-medium">
+              <p>noltalog001@noltalogistic.com</p>
+              <p>noltalog002@noltalogistic.com</p>
+            </div>
           </motion.div>
-
+ 
           {/* CARD 3 */}
           <motion.div
             variants={cardVariants}
@@ -118,17 +120,19 @@ export default function ContactInfo() {
             className="
               min-w-full snap-start
               md:min-w-0
-              h-64 px-8 pt-8
+              min-h-[16rem] px-6 py-8
               bg-white rounded-[10px]
               shadow-sm border border-gray-200
-              flex flex-col items-center gap-4
+              flex flex-col items-center justify-center gap-4
             "
           >
             <Image src="/icons/contact/location.svg" alt="Location" width={48} height={48} />
             <h3 className="text-[var(--color-primary)] text-2xl font-bold">Head Office</h3>
-            <p>GEDUNG PATRA JASA OFFICE</p>
-            <p>LANTAI 17</p>
-            <p>JL. JEND GATOT SUBROTO KAV 32-34, JAKARTA</p>
+            <div className="text-center text-[15px] text-gray-700 leading-normal flex flex-col gap-0.5">
+              <span className="font-semibold text-black">GEDUNG PATRA JASA OFFICE</span>
+              <span>LANTAI 17</span>
+              <span className="text-xs text-gray-500 font-medium">JL. JEND GATOT SUBROTO KAV 32-34, JAKARTA</span>
+            </div>
           </motion.div>
 
         </motion.div>

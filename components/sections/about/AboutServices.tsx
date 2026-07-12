@@ -37,34 +37,55 @@ export default function AboutServices() {
 
           {[
             {
-              icon: "/icons/about/transport.svg",
-              title: "Freight & Transportation",
-              desc: "Efficient land, sea, and air freight solutions optimized for reliability and cost efficiency.",
-            },
-            {
-              icon: "/icons/about/warehouse.svg",
-              title: "Warehousing & Distribution",
-              desc: "Secure storage, inventory management, and streamlined distribution operations.",
-            },
-            {
-              icon: "/icons/about/supply.svg",
-              title: "Supply Chain Optimization",
-              desc: "Strategic planning and tracking to improve visibility, reduce delays, and increase performance.",
-            },
-            {
-              icon: "/icons/about/distribution.svg",
-              title: "Distribution",
-              desc: "End-to-end distribution services ensuring fast and efficient product flow through last-mile delivery.",
-            },
-            {
               icon: "/icons/about/freight.svg",
-              title: "Freight Forwarding & Customs",
-              desc: "Expert freight forwarding and customs services to simplify global trade, including customs clearance and import–export documentation.",
+              title: "Freight Forwarding Services",
+              points: [
+                "Export & import freight forwarding",
+                "Shipping documentation",
+                "Cargo consolidation",
+                "Cargo insurance arrangement",
+              ],
             },
             {
-              icon: "/icons/about/packaging.svg",
-              title: "Packaging & Handling",
-              desc: "Professional packaging and handling services for standard, fragile, hazardous, and oversized goods.",
+              icon: "/icons/about/transport.svg",
+              title: "Land Transportation",
+              points: [
+                "Trucking services (FTL & LTL)",
+                "Door-to-door delivery",
+                "Domestic distribution",
+                "Project cargo & heavy equipment transportation",
+              ],
+            },
+            {
+              icon: "/icons/home/services/port.svg",
+              title: "Sea Freight",
+              points: [
+                "Full Container Load (FCL)",
+                "Less than Container Load (LCL)",
+                "Break bulk & bulk cargo",
+                "Export & import handling",
+                "Customs clearance assistance",
+              ],
+            },
+            {
+              icon: "/icons/about/air.svg",
+              title: "Air Freight",
+              points: [
+                "Regular & express air cargo",
+                "Time-sensitive shipments",
+                "General and special cargo",
+                "Door-to-door air freight services",
+              ],
+            },
+            {
+              icon: "/icons/about/project.svg",
+              title: "Project & Special Cargo",
+              points: [
+                "Heavy lift and oversized cargo",
+                "Project logistics",
+                "Charter vessel coordination",
+                "Port handling and supervision",
+              ],
             },
           ].map((item, i) => (
             <motion.div
@@ -75,7 +96,7 @@ export default function AboutServices() {
               whileInView="visible"
               viewport={{ once: true }}
               whileHover={{ y: -6 }}
-              className="bg-white border border-gray-200 rounded-xl p-8 flex flex-col items-start gap-4 shadow-sm hover:shadow-md transition-all"
+              className="bg-white border border-gray-200 rounded-xl p-8 flex flex-col items-start gap-4 shadow-sm hover:shadow-md transition-all group"
             >
               <Image
                 src={item.icon}
@@ -85,13 +106,18 @@ export default function AboutServices() {
                 className="w-12 h-12 object-contain"
               />
 
-              <h3 className="text-2xl font-bold text-[#012C61] leading-tight">
+              <h3 className="text-2xl font-bold text-[#012C61] leading-tight transition-transform duration-300 group-hover:scale-105 origin-left">
                 {item.title}
               </h3>
 
-              <p className="text-base text-gray-600 leading-relaxed">
-                {item.desc}
-              </p>
+              <ul className="flex flex-col gap-2 w-full text-base text-gray-600 mt-2">
+                {item.points.map((pt) => (
+                  <li key={pt} className="flex items-start gap-2">
+                    <span className="text-[#DF1026] mt-1.5">•</span>
+                    <span>{pt}</span>
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           ))}
 

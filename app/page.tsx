@@ -3,9 +3,10 @@ import type { Metadata } from "next"
 import Hero from "@/components/sections/home/Hero"
 import Services from "@/components/sections/home/Services"
 import AboutIntro from "@/components/sections/home/AboutIntro"
+import AboutInfoOne from "@/components/sections/home/AboutInfoOne"
+import AboutVisionMission from "@/components/sections/home/AboutVisionMission"
 import VideoSection from "@/components/sections/home/VideoSection"
 import AboutDetails from "@/components/sections/home/AboutDetails"
-import ServicesDetail from "@/components/sections/home/ServicesDetail"
 import Hub from "@/components/sections/home/Hub"
 
 export const metadata: Metadata = {
@@ -42,11 +43,12 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <Services />
+      <AboutInfoOne />
+      <AboutVisionMission />
       <AboutIntro />
       <VideoSection />
       <AboutDetails />
-      <ServicesDetail />
+      <Services />
       <Hub />
     </>
   )

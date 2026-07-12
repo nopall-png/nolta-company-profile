@@ -41,9 +41,9 @@ export default function AboutInfoTwo() {
 
             <div className="flex flex-col gap-8">
               {[
-                "Reliable and on-time delivery",
-                "Experienced logistics professionals",
-                "Commitment to safety and compliance",
+                "Experienced and professional team",
+                "Competitive pricing and transparent cost structure",
+                "Strong network and operational support",
               ].map((text, i) => (
                 <motion.div
                   key={text}
@@ -73,8 +73,8 @@ export default function AboutInfoTwo() {
 
             <div className="flex flex-col gap-8">
               {[
-                "Transparent shipment tracking",
-                "Scalable solutions",
+                "Commitment to on-time delivery",
+                "Customer-oriented service approach",
               ].map((text, i) => (
                 <motion.div
                   key={text}

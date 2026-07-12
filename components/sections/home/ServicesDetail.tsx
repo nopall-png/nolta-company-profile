@@ -13,7 +13,13 @@ const categories = [
   { key: "cyber", label: "Cybersecurity", icon: "/icons/home/services/cyber.svg" },
 ]
 
-const cardsByCategory: Record<CategoryKey, any[]> = {
+interface ServiceCard {
+  img?: string
+  title: string
+  desc: string
+}
+
+const cardsByCategory: Record<CategoryKey, ServiceCard[]> = {
   port: [
     {
       img: "/images/home/stories/spot.png",

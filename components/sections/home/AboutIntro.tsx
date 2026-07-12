@@ -41,7 +41,7 @@ export default function AboutIntroSection() {
           >
             <p className="text-center text-lg md:text-xl leading-relaxed text-[#001524]/80 font-['Poppins']">
               Logistics can get messy fast. And just when you think you’re done,
-              another challenge appears. With <span className="font-semibold text-[#001524]">Nolta</span> as your partner, you don't
+              another challenge appears. With <span className="font-semibold text-[#001524]">Nolta</span> as your partner, you don&apos;t
               have to face challenges alone. We bring clarity where complexity
               builds. Whether it’s one service or a complete solution, you{" "}
               

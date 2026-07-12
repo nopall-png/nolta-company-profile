@@ -29,9 +29,15 @@ export default function AboutInfoOne() {
           </h2>
 
           <p className="text-base md:text-lg text-black leading-relaxed">
-            We are a logistics company focused on delivering end-to-end supply chain solutions.
-            Our expertise spans transportation, warehousing, and distribution, enabling businesses
-            to operate efficiently across local and global markets.
+            PT Nolta Surya Trans is a trusted logistics and transportation company committed to
+            delivering reliable, efficient, and cost-effective supply chain solutions across Indonesia.
+            With years of experience in handling domestic and international logistics, we have built
+            a strong reputation for professionalism, precision, and customer satisfaction. Our
+            dedicated team ensures every shipment is managed with care, accuracy, and
+            timeliness.
+            We understand the complexity of logistics operations. Therefore, we provide
+            customized solutions tailored to meet each client’s specific needs—ensuring seamless
+            operations from origin to destination
           </p>
         </motion.div>
 

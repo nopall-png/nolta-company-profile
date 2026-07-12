@@ -26,19 +26,19 @@ const cards = [
     icon: "/icons/home/services/start.svg",
     title: "How to get started",
     desc:
-      "Create an account to book shipments, manage logistics operations, and make payments online.",
+      "Get started by reaching out to our team at noltalog001@noltalogistic.com to initiate your logistics requests and set up your account.",
   },
   {
     icon: "/icons/home/services/booking.svg",
     title: "Ready to book?",
     desc:
-      "Gain access to reliable logistics services, practical insights, and professional support to help your business.",
+      "Easily submit your cargo details, choose your destinations, and leverage our end-to-end support to coordinate and secure your shipments.",
   },
   {
     icon: "/icons/home/services/expert.svg",
     title: "Become a logistics expert",
     desc:
-      "Whether you need to request shipping rates, place a booking, prepare documents, or track your cargo.",
+      "Whether you need to request shipping rates, place a booking, prepare documents and ready to go.",
   },
 ]
 
@@ -60,6 +60,26 @@ export default function ServicesSection() {
     <section className="w-full py-24 bg-white">
       <div className="max-w-[1200px] mx-auto px-6">
 
+        {/* ================= HEADER ================= */}
+        <div className="flex flex-col items-center gap-4 mb-16 w-full">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-[40px] font-bold text-center leading-tight text-[#001524]"
+          >
+            How to Use Our Services
+          </motion.h2>
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: 160 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "circOut" }}
+            viewport={{ once: true }}
+            className="h-1 bg-[#DF1026] rounded-full"
+          />
+        </div>
+
         {/* ================= CARDS ================= */}
         <motion.div
           ref={scrollRef}
@@ -73,7 +93,7 @@ export default function ServicesSection() {
             md:overflow-visible
           "
         >
-          {cards.map((card, i) => (
+          {cards.map((card) => (
             <motion.div
               key={card.title}
               variants={cardVariants}
