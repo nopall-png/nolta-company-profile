@@ -111,10 +111,10 @@ export default function StoriesHubCTA() {
               {/* IMAGE WRAPPER (TANPA BADGE GROWTH) */}
               <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl border border-white/10 group">
                 <Image
-                  src="/images/home/stories.png"
+                  src="/images/home/story2.jpeg"
                   alt="NOLTA Stories Hub"
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="object-cover object-bottom transition-transform duration-700 group-hover:scale-110"
                   priority
                 />
                 

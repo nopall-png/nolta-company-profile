@@ -53,7 +53,7 @@ export default function AboutInfoOne() {
           "
         >
           <img
-            src="/images/about/whoweare.png"
+            src="/images/home/aboutus2.jpeg"
             alt="Logistics container and crane"
             className="w-full h-full object-cover rounded-md"
           />

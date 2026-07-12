@@ -129,9 +129,9 @@ export default function ContactInfo() {
             <Image src="/icons/contact/location.svg" alt="Location" width={48} height={48} />
             <h3 className="text-[var(--color-primary)] text-2xl font-bold">Head Office</h3>
             <div className="text-center text-[15px] text-gray-700 leading-normal flex flex-col gap-0.5">
-              <span className="font-semibold text-black">GEDUNG PATRA JASA OFFICE</span>
-              <span>LANTAI 17</span>
-              <span className="text-xs text-gray-500 font-medium">JL. JEND GATOT SUBROTO KAV 32-34, JAKARTA</span>
+              <span className="font-semibold text-black">Summarecon Bekasi</span>
+              <span>LANTAI 3</span>
+              <span className="text-xs text-gray-500 font-medium">Jl. Bulevar Selatan Blok UG 08, RT 004/011, Marga Mulya, Kec. Bekasi Utara, Jawa Barat 17142</span>
             </div>
           </motion.div>
 
